@@ -1,4 +1,3 @@
-import { JsxElement } from "typescript";
 import "./App.css";
 import { Education } from "./components/Education";
 import Experience from "./components/Experience";
@@ -43,7 +42,7 @@ export function Page(props: pageProps) {
   return (
     <>
       <Toolbar />
-      <main className="flex min-h-screen w-full flex-col items-center p-20">
+      <main className="flex min-h-screen w-full flex-col items-center py-32">
         {mainElement}
       </main>
     </>
@@ -54,14 +53,32 @@ export function Toolbar() {
   return (
     <header className="bg-zinc-900 fixed top-0 w-full">
       <nav className="container mx-auto px-6 py-3">
-        <div className="flex justify-evenly items-center font-serif">
-          <Link to="/">Home</Link>
-          <Link to="/experience">Experience</Link>
-          <Link to="/education">Education</Link>
-          <Link to="/projects">Projects</Link>
+        <div className="flex justify-evenly gap-3 items-center text-lg">
+          <ToolbarLink text="Home" to="/" />
+          <ToolbarLink text="Experience" to="/experience" />
+          <ToolbarLink text="Education" to="/education" />
+          <ToolbarLink text="Projects" to="/projects" />
         </div>
       </nav>
     </header>
+  );
+}
+
+interface toolbarLinkProps {
+  text: string;
+  to: string;
+}
+
+function ToolbarLink(props: toolbarLinkProps) {
+  const { text, to } = props;
+
+  return (
+    <Link
+      className="transition ease-in-out hover:bg-teal-500 hover:scale-105 py-2 px-4 rounded-lg"
+      to={to}
+    >
+      {text}
+    </Link>
   );
 }
 

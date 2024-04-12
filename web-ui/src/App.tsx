@@ -3,6 +3,15 @@ import { Education } from "./components/Education";
 import Experience from "./components/Experience";
 import Home from "./components/Home";
 
+import { faRProject } from "@fortawesome/free-brands-svg-icons";
+import {
+  IconDefinition,
+  faBriefcase,
+  faCode,
+  faHome,
+  faSchool,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Link,
   Navigate,
@@ -54,10 +63,10 @@ export function Toolbar() {
     <header className="bg-zinc-900 fixed top-0 w-full">
       <nav className="container mx-auto px-6 py-3">
         <div className="flex justify-evenly gap-3 items-center text-lg">
-          <ToolbarLink text="Home" to="/" />
-          <ToolbarLink text="Experience" to="/experience" />
-          <ToolbarLink text="Education" to="/education" />
-          <ToolbarLink text="Projects" to="/projects" />
+          <ToolbarLink icon={faHome} text="Home" to="/" />
+          <ToolbarLink icon={faBriefcase} text="Experience" to="/experience" />
+          <ToolbarLink icon={faSchool} text="Education" to="/education" />
+          <ToolbarLink icon={faCode} text="Projects" to="/projects" />
         </div>
       </nav>
     </header>
@@ -65,19 +74,21 @@ export function Toolbar() {
 }
 
 interface toolbarLinkProps {
+  icon: IconDefinition;
   text: string;
   to: string;
 }
 
 function ToolbarLink(props: toolbarLinkProps) {
-  const { text, to } = props;
+  const { icon, text, to } = props;
 
   return (
     <Link
       className="transition ease-in-out hover:bg-teal-500 hover:scale-105 py-2 px-4 rounded-lg"
       to={to}
     >
-      {text}
+      <FontAwesomeIcon icon={icon} />
+      <p className="hidden sm:inline px-2">{text}</p>
     </Link>
   );
 }

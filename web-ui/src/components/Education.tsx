@@ -1,4 +1,4 @@
-export function Education() {
+export default function Education() {
   const freshmanCard = (
     <EducationCard
       title="Freshman"

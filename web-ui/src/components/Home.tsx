@@ -15,7 +15,7 @@ function Intro() {
     "transition p-3 bg-teal-800 hover:bg-teal-600 font-bold font-mono";
 
   return (
-    <div className="w-full text-5xl leading-relaxed px-10 md:px-20">
+    <div className="w-full leading-relaxed text-4xl md:text-5xl md:leading-relaxed lg:text-6xl lg:leading-relaxed px-10 md:px-20">
       <p>My name is</p>
       <span className={emphasis}>Steven Ott</span>
       <p>and I'm a </p>

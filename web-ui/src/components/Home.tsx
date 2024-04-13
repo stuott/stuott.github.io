@@ -11,11 +11,10 @@ export default function Home() {
 }
 
 function Intro() {
-  const emphasis =
-    "transition p-3 bg-teal-800 hover:bg-teal-600 font-bold font-mono";
+  const emphasis = "transition p-3 bg-cyan-800 font-bold font-mono";
 
   return (
-    <div className="w-full leading-relaxed text-4xl md:text-5xl md:leading-relaxed lg:text-6xl lg:leading-relaxed px-10 md:px-20">
+    <div className="w-full text-white leading-relaxed text-2xl md:text-3xl md:leading-relaxed lg:text-6xl lg:leading-relaxed">
       <p>My name is</p>
       <span className={emphasis}>Steven Ott</span>
       <p>and I'm a </p>

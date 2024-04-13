@@ -131,8 +131,7 @@ export default function Education() {
 
   return (
     <>
-      <div className="grid xl:grid-cols-2 px-10 md:px-20 gap-16 w-full text-left">
-        <div className="outline rounded-xl bg-teal-900 p-6">Working</div>
+      <div className="grid xl:grid-cols-2 gap-16 w-full text-left">
         {seniorCard}
         {juniorCard}
         {sophomoreCard}
@@ -157,12 +156,12 @@ function EducationCard(props: educationCardProps) {
   const { title, years, categories } = props;
 
   return (
-    <div className="flex flex-col md:flex-row w-full gap-4">
+    <div className="flex flex-col md:flex-row w-full gap-4 text-white ">
       <div className="w-full md:w-1/4">
-        <h1 className="text-2xl font-serif underline">{title}</h1>
+        <h1 className="text-2xl font-serif ">{title}</h1>
         <h2 className="italic">{years}</h2>
       </div>
-      <div className="grid outline rounded-xl p-6 gap-6 w-full md:w-3/4 bg-teal-900">
+      <div className="grid rounded-lg p-6 gap-6 w-full md:w-3/4 bg-cyan-900">
         {categories.map((category) => {
           console.log(category);
           return (

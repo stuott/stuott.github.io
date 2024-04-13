@@ -12,24 +12,26 @@ export default function Projects() {
     { id: 3, title: "Diet Tracker", element: <DietTracker /> },
   ];
 
-  const [selected, setSelected] = useState(projects[0].element);
+  const [selected, setSelected] = useState(0);
 
   return (
-    <div className="flex gap-4 w-full px-10 md:px-20">
-      <div className="grid gap-5 w-1/3 rounded-xl">
+    <div className="flex flex-col gap-4 w-full text-white ">
+      <div className="grid grid-cols-4 p-4 gap-4 place-content-around">
         {projects.map((project) => {
           return (
             <button
-              onClick={() => setSelected(project.element)}
-              className="text-left rounded-xl outline p-4
-              hover:text-cyan-800 hover:outline-cyan-800 hover:bg-gray-300"
+              onClick={() => setSelected(project.id)}
+              className={
+                "transition rounded-xl p-4 hover:bg-cyan-600" +
+                (selected == project.id ? " bg-cyan-800" : " bg-slate-600")
+              }
             >
               {project.title}
             </button>
           );
         })}
       </div>
-      <div className="w-full rounded-xl p-6 outline">{selected}</div>
+      <div className="w-full ">{projects[selected].element}</div>
     </div>
   );
 }

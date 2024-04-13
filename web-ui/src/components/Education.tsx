@@ -130,12 +130,15 @@ export default function Education() {
   );
 
   return (
-    <div className="grid xl:grid-cols-2 px-10 md:px-20 gap-16 w-full text-left">
-      {seniorCard}
-      {juniorCard}
-      {sophomoreCard}
-      {freshmanCard}
-    </div>
+    <>
+      <div className="grid xl:grid-cols-2 px-10 md:px-20 gap-16 w-full text-left">
+        <div className="outline rounded-xl bg-teal-900 p-6">Working</div>
+        {seniorCard}
+        {juniorCard}
+        {sophomoreCard}
+        {freshmanCard}
+      </div>
+    </>
   );
 }
 

@@ -53,6 +53,7 @@ export function Page(props: pageProps) {
       <main className="flex min-h-screen w-full flex-col items-center py-32">
         {mainElement}
       </main>
+      <Footer />
     </>
   );
 }
@@ -83,12 +84,26 @@ function ToolbarLink(props: toolbarLinkProps) {
 
   return (
     <Link
-      className="transition ease-in-out hover:bg-teal-500 hover:scale-105 py-2 px-4 rounded-lg"
+      className="transition ease-in-out hover:bg-teal-600 hover:scale-105 py-2 px-4 rounded-lg"
       to={to}
     >
       <FontAwesomeIcon icon={icon} />
       <p className="hidden sm:inline px-2">{text}</p>
     </Link>
+  );
+}
+
+export function Footer() {
+  return (
+    <div className="p-2">
+      Check out the source code on{" "}
+      <a
+        className="underline text-cyan-800"
+        href="https://github.com/stuott/stuott.github.io"
+      >
+        GitHub
+      </a>
+    </div>
   );
 }
 

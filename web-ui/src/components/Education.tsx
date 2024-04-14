@@ -161,15 +161,14 @@ function EducationCard(props: educationCardProps) {
         <h1 className="text-2xl font-serif ">{title}</h1>
         <h2 className="italic">{years}</h2>
       </div>
-      <div className="grid rounded-lg p-6 gap-6 w-full md:w-3/4 bg-cyan-900">
+      <div className="grid p-6 gap-6 w-full md:w-3/4 bg-cyan-900">
         {categories.map((category) => {
-          console.log(category);
           return (
             <div className="flex flex-col">
               <h2 className="font-bold">{category.title}</h2>
               <ul className="list-disc list-inside">
                 {category.courses.map((course, index) => (
-                  <li>{course}</li>
+                  <li key={index}>{course}</li>
                 ))}
               </ul>
             </div>

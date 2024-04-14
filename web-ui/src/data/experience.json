@@ -1,0 +1,55 @@
+{
+    "data": [
+        {
+            "title": "Software Developer",
+            "company": "Epic Systems",
+            "companyURL": "https://www.epic.com/",
+            "location": "Madison, WI",
+            "time": "June 2022 - Present",
+            "points": [
+                "Designed and implemented new features for an eletronic health record across an array of integrated specialty applications (focused on cardiology and interventional radiology)",
+                "Worked in an interdisciplinary team to take ownership of clinician workflows used at large-scale healthcare systems"
+            ],
+            "skills": [
+                "Git",
+                "JavaScript/TypeScript",
+                "HTML",
+                "SCSS/CSS",
+                "Code/Design Review"
+            ]
+        },
+        {
+            "title": "Software Engineering Intern",
+            "company": "Plexus",
+            "companyURL": "https://www.plexus.com/",
+            "location": "Neenah, WI",
+            "time": "May 2021 - August 2021",
+            "points": [
+                "Collaborated with a product team to release software updates for an integrated solution",
+                "Sustained product software by creating software verification test procedures",
+                "Migrated released source code repositories from SVN to Git to preserve commit history"
+            ],
+            "skills": [
+                "SVN",
+                "Python",
+                "C++",
+                "Integrated Testing"
+            ]
+        },
+        {
+            "title": "Optometric Technician",
+            "company": "Your Eye Care Team",
+            "companyURL": "https://www.youreyecareteam.com/",
+            "location": "New Holstein, WI",
+            "time": "May 2020 - August 2020",
+            "points": [
+                "Coordinated with a team to efficiently perform comprehensive eye health examinations and high-level medical eye care",
+                "Maintained proper HIPAA procedures and security guidelines to safeguard patient confidentiality and sensitive information"
+            ],
+            "skills": [
+                "Customer Service",
+                "PHI Security"
+            ]
+        }
+    ]
+}

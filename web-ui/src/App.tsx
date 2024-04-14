@@ -1,22 +1,23 @@
 import "./App.css";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
-import Home from "./components/Home";
+import Intro, { About } from "./components/Intro";
 import Projects from "./components/Projects";
 
 function App() {
   return (
-    <>
+    <body>
       <main className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:px-24 lg:py-12">
         <div className="grid gap-16">
-          <Home />
-          <Education />
+          <Intro />
+          <About />
+          {/* <Education /> */}
           <Experience />
           <Projects />
         </div>
       </main>
       <Footer />
-    </>
+    </body>
   );
 }
 

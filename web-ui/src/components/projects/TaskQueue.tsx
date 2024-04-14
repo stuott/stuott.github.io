@@ -13,11 +13,13 @@ export default function TaskQueue() {
   const [tasks, setTasks] = useState((): task[] => []);
 
   return (
-    <div className="grid gap-3 text-white">
+    <div className="text-white">
       <TaskEntry tasks={tasks} setTasks={setTasks} />
-      {tasks.map((todo) => (
-        <TaskCard task={todo} />
-      ))}
+      <div className="grid gap-3 pt-3 overflow-y-auto max-h-80">
+        {tasks.map((todo) => (
+          <TaskCard task={todo} />
+        ))}
+      </div>
     </div>
   );
 }
@@ -35,10 +37,10 @@ function TaskEntry(props: taskEntryProps) {
   const [description, setDescription] = useState<string>("");
   const [date, setDate] = useState<Date>();
 
-  const entryField = "w-full p-2 rounded-lg";
+  const entryField = "w-full p-2 rounded-lg bg-zinc-600";
 
   return (
-    <div className="grid gap-3 bg-neutral-900 rounded-lg p-4">
+    <div className="grid gap-3 bg-neutral-800 rounded-lg p-4">
       <div className="flex w-full gap-3">
         <div className="flex-col w-full">
           <label className="text-sm">Title</label>
@@ -122,18 +124,14 @@ function TaskEntry(props: taskEntryProps) {
   );
 }
 
-interface taskCardProps {
-  task: task;
-}
-
-function TaskCard(props: taskCardProps) {
+function TaskCard(props: { task: task }) {
   const { task } = props;
 
   return (
     <div
       className={
         "flex items-center p-3 gap-3 rounded-lg" +
-        (task.priority ? " bg-red-100" : " bg-neutral-100")
+        (task.priority ? " bg-red-900" : " bg-neutral-800")
       }
     >
       <div className="flex-col w-full">

@@ -23,7 +23,7 @@ export default function Projects() {
               onClick={() => setSelected(project.id)}
               className={
                 "transition rounded-xl p-4 hover:bg-cyan-600" +
-                (selected == project.id ? " bg-cyan-800" : " bg-slate-600")
+                (selected === project.id ? " bg-cyan-800" : " bg-zinc-800")
               }
             >
               {project.title}

@@ -19,7 +19,7 @@ export function About() {
   const data = jsonData.data;
 
   return (
-    <div className="text-zinc-200 grid gap-6">
+    <div className="text-zinc-300 grid gap-6">
       <Title title="About" />
       <div className="grid gap-3">
         {data.map((paragraph) => {

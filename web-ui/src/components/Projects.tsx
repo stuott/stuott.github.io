@@ -16,13 +16,13 @@ export default function Projects() {
 
   return (
     <div className="flex flex-col gap-4 w-full text-white ">
-      <div className="grid grid-cols-4 p-4 gap-4 place-content-around">
+      <div className="grid grid-cols-2 sm:grid-cols-4 p-4 gap-4 place-content-around">
         {projects.map((project) => {
           return (
             <button
               onClick={() => setSelected(project.id)}
               className={
-                "transition rounded-xl p-4 hover:bg-cyan-600" +
+                "transition rounded-xl p-4 hover:bg-cyan-600 hover:scale-[1.05]" +
                 (selected === project.id ? " bg-cyan-800" : " bg-zinc-800")
               }
             >

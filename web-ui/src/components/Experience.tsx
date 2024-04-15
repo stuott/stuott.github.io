@@ -1,7 +1,7 @@
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import jsonData from "../data/experience.json";
-import Title from "./CardUtils";
+import { Badges, Title } from "./CardUtils";
 
 interface experience {
   title: string;
@@ -51,7 +51,7 @@ function ExperienceCard(props: { exp: experience }) {
           companyURL={exp.companyURL}
           location={exp.location}
         />
-        <ExperienceSkills skills={exp.skills} />
+        <Badges captions={exp.skills} />
         <ExperiencePoints points={exp.points} />
       </div>
     </div>
@@ -69,7 +69,7 @@ function ExperienceMeta(props: {
   return (
     <>
       <a
-        className="transition hover:text-cyan-300"
+        className="transition hover:underline hover:text-cyan-300"
         href={companyURL}
         target="_blank"
         rel="noopener noreferrer"
@@ -80,20 +80,6 @@ function ExperienceMeta(props: {
       </a>
       <p className="italic text-zinc-500">{location}</p>
     </>
-  );
-}
-
-function ExperienceSkills(props: { skills: string[] }) {
-  const { skills } = props;
-
-  return (
-    <ul className="flex flex-wrap gap-2 pt-2">
-      {skills.map((skill) => {
-        return (
-          <li className="rounded-xl bg-cyan-900 py-1 px-2 text-sm">{skill}</li>
-        );
-      })}
-    </ul>
   );
 }
 

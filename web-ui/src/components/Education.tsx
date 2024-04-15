@@ -1,143 +1,47 @@
+import jsonData from "../data/education.json";
+import { Badges, Title } from "./CardUtils";
+
 export default function Education() {
-  const freshmanCard = (
-    <EducationCard
-      title="Freshman"
-      years="2018 - 2019"
-      categories={[
-        {
-          title: "Degree-Specific",
-          courses: [
-            "Intro to Programming II",
-            "Programming at the HW/SW Interface",
-            "Essential Math for EE",
-            "ECE 1.0",
-          ],
-        },
-        {
-          title: "STEM-Focused",
-          courses: [
-            "Engineering Analysis & Problem Solving",
-            "Calculus Plus w/ Technology I",
-            "Calculus with Technology II",
-            "Physics by Inquiry I",
-            "University Physics I - Mechanics",
-          ],
-        },
-        {
-          title: "Humanities",
-          courses: ["Global Issues", "Introduction to Sociology"],
-        },
-      ]}
-    />
+  return (
+    <div className="text-white">
+      <Title title="Education" />
+      <div className="flex flex-col sm:flex-row gap-4 p-4">
+        <a
+          className="w-4/6 sm:1/2 md:w-1/3"
+          href="https://www.mtu.edu/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            className="transition hover:scale-[1.02] p-4 hover:bg-cyan-700"
+            alt="Michigan Techological University Logo"
+            src={process.env.PUBLIC_URL + "/MTU_Logo.png"}
+          />
+        </a>
+        <div className=" sm:w-3/4">
+          <p className="text-zinc-200 font-bold">BS Computer Engineering</p>
+          <p className="text-zinc-400 italic">3.93 GPA | Dean's List</p>
+          <Badges
+            captions={[
+              "Triangle Fraternity - President",
+              "Blue Marble Security Enterprise",
+            ]}
+          />
+        </div>
+      </div>
+    </div>
   );
+}
 
-  const sophomoreCard = (
-    <EducationCard
-      title="Sophomore"
-      years="2019 - 2020"
-      categories={[
-        {
-          title: "Degree-Specific",
-          courses: [
-            "Electric Circuits I",
-            "Electric Circuits II and Lab",
-            "Digital Logic and Lab",
-            "Discrete Structures",
-            "Data Structures",
-          ],
-        },
-        {
-          title: "STEM-Focused",
-          courses: [
-            "Elementary Linear Algebra",
-            "Elementary Differential Equations",
-            "Physics by Inquiry II",
-            "University Physics II - Electricity & Magnetism",
-          ],
-        },
-        {
-          title: "Humanities",
-          courses: ["Beginning Acting", "Introduction to Literature"],
-        },
-      ]}
-    />
-  );
-
-  const juniorCard = (
-    <EducationCard
-      title="Junior"
-      years="2020 - 2021"
-      categories={[
-        {
-          title: "Enterprise",
-          courses: ["Blue Marble Security"],
-        },
-        {
-          title: "Degree-Specific",
-          courses: [
-            "Computer Organization",
-            "Introduction to Algorithms",
-            "Electronics",
-            "Signals and Systems",
-            "Systems Programming",
-            "HW/SW System Integration",
-          ],
-        },
-        {
-          title: "STEM-Focused",
-          courses: [
-            "Engineering Statistics",
-            "Design Fundamentals",
-            "Statistical Programming and Analysis",
-          ],
-        },
-        {
-          title: "Humanities",
-          courses: ["Technical and Professional Communication", "Mythology"],
-        },
-      ]}
-    />
-  );
-
-  const seniorCard = (
-    <EducationCard
-      title="Senior"
-      years="2021 - 2022"
-      categories={[
-        {
-          title: "Enterprise",
-          courses: ["Blue Marble Security", "Communication Contexts"],
-        },
-        {
-          title: "Degree-Specific",
-          courses: [
-            "Formal Models of Computation",
-            "Computer Systems Engineering & Performance",
-            "Computer Networks",
-            "Embedded System Interfacing",
-          ],
-        },
-        {
-          title: "STEM-Focus",
-          courses: [
-            "Understanding the Earth",
-            "Introduction to Archaeology",
-            "Electric Energy Systems",
-          ],
-        },
-      ]}
-    />
-  );
+export function EducationDetailed() {
+  const data = jsonData.data;
 
   return (
-    <>
-      <div className="grid xl:grid-cols-2 gap-16 w-full text-left">
-        {seniorCard}
-        {juniorCard}
-        {sophomoreCard}
-        {freshmanCard}
-      </div>
-    </>
+    <div className="grid xl:grid-cols-2 gap-16 w-full text-left">
+      {data.map((grade) => (
+        <EducationCard data={grade} />
+      ))}
+    </div>
   );
 }
 
@@ -146,23 +50,23 @@ interface educationCategory {
   courses: string[];
 }
 
-interface educationCardProps {
+interface grade {
   title: string;
   years: string;
   categories: educationCategory[];
 }
 
-function EducationCard(props: educationCardProps) {
-  const { title, years, categories } = props;
+function EducationCard(props: { data: grade }) {
+  const { data } = props;
 
   return (
     <div className="flex flex-col md:flex-row w-full gap-4 text-white ">
       <div className="w-full md:w-1/4">
-        <h1 className="text-2xl font-serif ">{title}</h1>
-        <h2 className="italic">{years}</h2>
+        <h1 className="text-2xl font-serif ">{data.title}</h1>
+        <h2 className="italic">{data.years}</h2>
       </div>
       <div className="grid p-6 gap-6 w-full md:w-3/4 bg-cyan-900">
-        {categories.map((category) => {
+        {data.categories.map((category) => {
           return (
             <div className="flex flex-col">
               <h2 className="font-bold">{category.title}</h2>

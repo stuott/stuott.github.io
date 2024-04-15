@@ -1,18 +1,18 @@
 import "./App.css";
+import Intro, { About } from "./components/About";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
-import Intro, { About } from "./components/Intro";
 import Projects from "./components/Projects";
 
 function App() {
   return (
     <body>
       <main className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:px-24 lg:py-12">
-        <div className="grid gap-16">
+        <div className="grid gap-8">
           <Intro />
           <About />
-          {/* <Education /> */}
           <Experience />
+          <Education />
           <Projects />
         </div>
       </main>

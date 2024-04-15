@@ -1,4 +1,5 @@
-import Title from "./CardUtils";
+import jsonData from "../data/about.json";
+import { Title } from "./CardUtils";
 
 export default function Intro() {
   const emphasis = "transition p-1 bg-cyan-800 font-bold font-mono";
@@ -15,10 +16,16 @@ export default function Intro() {
 }
 
 export function About() {
+  const data = jsonData.data;
+
   return (
-    <div className="text-white grid gap-6">
-      <Title title="About Me" />
-      <p>Summary</p>
+    <div className="text-zinc-200 grid gap-6">
+      <Title title="About" />
+      <div className="grid gap-3">
+        {data.map((paragraph) => {
+          return <p className="">{paragraph.join(". ") + "."}</p>;
+        })}
+      </div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Section, SectionTitle } from "./SectionUtils";
 import DietTracker from "./projects/DietTracker";
 import ReadingList from "./projects/ReadingList";
 import TaskQueue from "./projects/TaskQueue";
@@ -15,7 +16,8 @@ export default function Projects() {
   const [selected, setSelected] = useState(0);
 
   return (
-    <div className="flex flex-col gap-4 w-full text-white ">
+    <Section id="projects">
+      <SectionTitle title="Projects" />
       <div className="grid grid-cols-2 sm:grid-cols-4 p-4 gap-4 place-content-around">
         {projects.map((project) => {
           return (
@@ -32,6 +34,6 @@ export default function Projects() {
         })}
       </div>
       <div className="w-full ">{projects[selected].element}</div>
-    </div>
+    </Section>
   );
 }

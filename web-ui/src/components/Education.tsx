@@ -1,10 +1,10 @@
 import jsonData from "../data/education.json";
-import { Badges, Title } from "./CardUtils";
+import { Badges, Section, SectionTitle } from "./SectionUtils";
 
 export default function Education() {
   return (
-    <div className="text-white">
-      <Title title="Education" />
+    <Section id="education">
+      <SectionTitle title="Education" />
       <div className="flex flex-col sm:flex-row gap-4 p-4">
         <a
           className="w-4/6 sm:1/2 md:w-1/3"
@@ -29,7 +29,7 @@ export default function Education() {
           />
         </div>
       </div>
-    </div>
+    </Section>
   );
 }
 

@@ -1,5 +1,5 @@
 import jsonData from "../data/quotes.json";
-import { Title } from "./CardUtils";
+import { Section, SectionTitle } from "./SectionUtils";
 
 export default function Quotes() {
   const data = jsonData.data;
@@ -7,12 +7,12 @@ export default function Quotes() {
   const quote = data[date.getDay() % data.length];
 
   return (
-    <div className="text-zinc-300 grid gap-6">
-      <Title title="Daily Meditation" />
+    <Section id="meditation">
+      <SectionTitle title="Daily Meditation" />
       <div className="text-center text-lg">
         <blockquote>"{quote.text}"</blockquote>
         <p className="text-sm"> - {quote.author}</p>
       </div>
-    </div>
+    </Section>
   );
 }

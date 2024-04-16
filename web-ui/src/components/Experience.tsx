@@ -1,7 +1,7 @@
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import jsonData from "../data/experience.json";
-import { Badges, Title } from "./CardUtils";
+import { Badges, Section, SectionTitle } from "./SectionUtils";
 
 interface experience {
   title: string;
@@ -17,10 +17,10 @@ export default function Experience() {
   const data: experience[] = jsonData.data;
 
   return (
-    <div className="flex flex-col gap-4 text-white">
-      <Title title="Experience" />
+    <Section id="experience">
+      <SectionTitle title="Experience" />
       <ExperienceList experiences={data} />
-    </div>
+    </Section>
   );
 }
 
